@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplicationProgect.Models;
-
+using WebApplicationProgect.Data;
 namespace WebApplicationProgect.Controllers
 {
     public class HomeController : Controller
@@ -20,9 +20,20 @@ namespace WebApplicationProgect.Controllers
 
         public IActionResult Index()
         {
+            ViewData["position"] = -1;
             return View();
         }
-
+        [HttpGet]
+        public IActionResult SetPage(int id)
+        {
+            if (id < 0 || id >= PageNames.PageName.Length)
+            {
+                return Index();
+            }
+            ViewData["position"] = id;
+            //return View("Контакты");
+            return View(PageNames.PageName[id]);
+        }
         public IActionResult Privacy()
         {
             return View();

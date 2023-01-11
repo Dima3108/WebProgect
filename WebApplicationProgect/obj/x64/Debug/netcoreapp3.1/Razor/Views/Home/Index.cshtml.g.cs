@@ -33,8 +33,15 @@ using React.AspNet;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\Views\_ViewImports.cshtml"
+using WebApplicationProgect.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9143d9eb3fce217955badcdb54e1de0a16e66ea8", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"83ff6edb49658f32695b64575fdc43be32f1bafb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb67e38d38f28b984887b2e7b2d4a283d21987f7", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

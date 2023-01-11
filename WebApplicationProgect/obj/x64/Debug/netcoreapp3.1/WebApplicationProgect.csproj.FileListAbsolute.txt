@@ -52,3 +52,7 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\linux-x64\native\libChakraCore.so
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win-arm\native\ChakraCore.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win-x86\native\ChakraCore.dll
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Контакты.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Наши достижения.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Отзывы.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Тарифы.cshtml.g.cs

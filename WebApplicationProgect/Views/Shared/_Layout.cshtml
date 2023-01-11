@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@using WebApplicationProgect.Data; 
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,28 +7,62 @@
     <title>@ViewData["Title"] - WebApplicationProgect</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @{ 
+        string g(int i)
+        {
+            return PageNames.PageName[i] + ".css";
+        }
+        int l = (int)ViewData["position"];
+        if (l < 0)
+        {
+                <link rel="stylesheet" href="~/css/Index.css" />
+        }
+            else
+            {
+                <link rel="stylesheet" href="~/css/@g(l)" />
+            }
+    }
 </head>
+
 <body>
     <header>
+        <input type="hidden" value="@ViewData["position"]" id="page_n" />
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplicationProgect</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+            <div class="container ">
+                <!--<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplicationProgect</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>
+        </ul>
+    </div>-->
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="navbar-nav flex-grow-1 menu_">
+@{ 
+    string GetID(int id) => "ifr" + id.ToString();
+}
+                    @for(int i = 0; i < PageNames.PageName.Length; i++)
+            {
+                   
+                   
+                        <a href="/Home/SetPage?id=@i.ToString()" id="@GetID(i)" style="color:aqua">
+                            @PageNames.PageName[i]
+                        </a>
+                    
+               
+            }
                 </div>
             </div>
         </nav>
+        <script src="~/js/_Layout.js"></script>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -43,7 +78,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    
     @RenderSection("Scripts", required: false)
 </body>
 </html>
