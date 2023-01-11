@@ -32,6 +32,11 @@
       "WebApplicationProgect/1.0.0": {
         "dependencies": {
           "JavaScriptEngineSwitcher.ChakraCore": "3.20.6",
+          "JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64": "3.20.6",
+          "JavaScriptEngineSwitcher.ChakraCore.Native.win-arm": "3.20.6",
+          "JavaScriptEngineSwitcher.ChakraCore.Native.win-x64": "3.20.6",
+          "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86": "3.20.6",
+          "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": "3.1.0",
           "React.AspNet": "5.2.12",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -124,7 +129,7 @@
           "Microsoft.Extensions.Configuration.KeyPerFile": "3.1.0.0",
           "Microsoft.Extensions.Configuration.UserSecrets": "3.1.0.0",
           "Microsoft.Extensions.Configuration.Xml": "3.1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions.Reference": "3.1.0.0",
           "Microsoft.Extensions.DependencyInjection": "3.1.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.0.0",
@@ -354,6 +359,42 @@
           "lib/netstandard2.1/JavaScriptEngineSwitcher.ChakraCore.dll": {}
         }
       },
+      "JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64/3.20.6": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libChakraCore.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "JavaScriptEngineSwitcher.ChakraCore.Native.win-arm/3.20.6": {
+        "runtimeTargets": {
+          "runtimes/win-arm/native/ChakraCore.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "1.13.0.0"
+          }
+        }
+      },
+      "JavaScriptEngineSwitcher.ChakraCore.Native.win-x64/3.20.6": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/ChakraCore.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.13.0.0"
+          }
+        }
+      },
+      "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86/3.20.6": {
+        "runtimeTargets": {
+          "runtimes/win-x86/native/ChakraCore.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.13.0.0"
+          }
+        }
+      },
       "JavaScriptEngineSwitcher.Core/3.19.0": {
         "dependencies": {
           "AdvancedStringBuilder": "0.1.0"
@@ -371,6 +412,21 @@
         },
         "compile": {
           "lib/netstandard2.0/JavaScriptEngineSwitcher.Core.dll": {}
+        }
+      },
+      "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection/3.1.0": {
+        "dependencies": {
+          "JavaScriptEngineSwitcher.Core": "3.19.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/JavaScriptEngineSwitcher.Extensions.MsDependencyInjection.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/JavaScriptEngineSwitcher.Extensions.MsDependencyInjection.dll": {}
         }
       },
       "JSPool/4.0.0": {
@@ -408,6 +464,7 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {},
       "Microsoft.Extensions.DependencyModel/2.1.0": {
         "dependencies": {
           "Microsoft.DotNet.PlatformAbstractions": "2.1.0",
@@ -1271,7 +1328,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions.Reference/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         },
@@ -2439,12 +2496,47 @@
       "path": "javascriptengineswitcher.chakracore/3.20.6",
       "hashPath": "javascriptengineswitcher.chakracore.3.20.6.nupkg.sha512"
     },
+    "JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64/3.20.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h1ywodLgrPosmCOYtoHAcN9GTFvTjQs8ctbPMb65wTZqfkPLZOyRZYAl4fTVZ5jz6KNs9Seo/p3vAhHjtnVvxQ==",
+      "path": "javascriptengineswitcher.chakracore.native.linux-x64/3.20.6",
+      "hashPath": "javascriptengineswitcher.chakracore.native.linux-x64.3.20.6.nupkg.sha512"
+    },
+    "JavaScriptEngineSwitcher.ChakraCore.Native.win-arm/3.20.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HKRL7OXulISml9Jq8koyrLFRoCJy3SGwSaxuvKavwocCGV3cmUyfV7cIbKHsc+4giKJRRLjr45v6zXyLE4fdZQ==",
+      "path": "javascriptengineswitcher.chakracore.native.win-arm/3.20.6",
+      "hashPath": "javascriptengineswitcher.chakracore.native.win-arm.3.20.6.nupkg.sha512"
+    },
+    "JavaScriptEngineSwitcher.ChakraCore.Native.win-x64/3.20.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qmYxhijlxBEiHNgGJ+hbXaLE8JbRhMG7rT8nS9mPhRHp0VkR6ru2zeJBEjlruNqtCzzqASJ0pP6K8YSimVzfkg==",
+      "path": "javascriptengineswitcher.chakracore.native.win-x64/3.20.6",
+      "hashPath": "javascriptengineswitcher.chakracore.native.win-x64.3.20.6.nupkg.sha512"
+    },
+    "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86/3.20.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VvlnmOZN/FRNtmjNr2jXzSoPe131ttlqMw1gxwyZ3GGzCsv7Cx8eLUcGWtUzpiIuHWDTOv+GIHyZ5DnOnxv0KQ==",
+      "path": "javascriptengineswitcher.chakracore.native.win-x86/3.20.6",
+      "hashPath": "javascriptengineswitcher.chakracore.native.win-x86.3.20.6.nupkg.sha512"
+    },
     "JavaScriptEngineSwitcher.Core/3.19.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-cFZG0+8OzRP7xDgmJpVwAA9V04Y3uWlAyjP+wx801crLfZr/nw1ohJtH8kBK+m9CIUHfyR1iw2b2F8q6WW2O4w==",
       "path": "javascriptengineswitcher.core/3.19.0",
       "hashPath": "javascriptengineswitcher.core.3.19.0.nupkg.sha512"
+    },
+    "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kmMJtNQyPGJqxTIDwRhCN9MSi6l9lYbc5hfj4w2i5sAlXBV/miKVrr3nXOS7ETU1U3bFnSp2tU7ySTUE+lKh0w==",
+      "path": "javascriptengineswitcher.extensions.msdependencyinjection/3.1.0",
+      "hashPath": "javascriptengineswitcher.extensions.msdependencyinjection.3.1.0.nupkg.sha512"
     },
     "JSPool/4.0.0": {
       "type": "package",
@@ -2459,6 +2551,13 @@
       "sha512": "sha512-9KPDwvb/hLEVXYruVHVZ8BkebC8j17DmPb56LnqRF74HqSPLjCkrlFUjOtFpQPA2DeADBRTI/e69aCfRBfrhxw==",
       "path": "microsoft.dotnet.platformabstractions/2.1.0",
       "hashPath": "microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uE/s/YsArdj+i6EFQmwpjbGhI13QkouQQtoDDL3uQmjgXistvKH7cqXLsEMgQOCs1flzZI77iUZxhhPyOzaOwA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyModel/2.1.0": {
       "type": "package",
@@ -3160,7 +3259,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0.0": {
+    "Microsoft.Extensions.DependencyInjection.Abstractions.Reference/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

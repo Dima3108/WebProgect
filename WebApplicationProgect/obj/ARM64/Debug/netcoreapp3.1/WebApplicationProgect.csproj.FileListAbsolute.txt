@@ -20,7 +20,6 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\D
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\React.Core.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\ru-RU\JavaScriptEngineSwitcher.ChakraCore.resources.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\ru-RU\JavaScriptEngineSwitcher.Core.resources.dll
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.csproj.AssemblyReference.cache
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.AssemblyInfoInputs.cache
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.AssemblyInfo.cs
@@ -47,3 +46,32 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\D
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.pdb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.genruntimeconfig.cache
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\JavaScriptEngineSwitcher.Extensions.MsDependencyInjection.dll
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\runtimes\linux-x64\native\libChakraCore.so
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\runtimes\win-arm\native\ChakraCore.dll
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\runtimes\win-x64\native\ChakraCore.dll
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\runtimes\win-x86\native\ChakraCore.dll
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\Razor\Views\Home\Контакты.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\Razor\Views\Home\Наши достижения.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\Razor\Views\Home\Отзывы.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\Razor\Views\Home\Тарифы.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\Index.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\site.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\_Layout.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\Контакты.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\Наши достижения.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\Отзывы.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\css\Тарифы.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\favicon.ico
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\js\site.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\js\tutorial.jsx
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\js\_Layout.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\jquery-validation\dist\additional-methods.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Debug\netcoreapp3.1\wwwroot\lib\jquery\dist\jquery.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Debug\netcoreapp3.1\WebApplicationProgect.csproj.AssemblyReference.cache
