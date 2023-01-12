@@ -1,4 +1,10 @@
 ﻿<!DOCTYPE html>
+@{ 
+///<summary>
+///https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/layout?view=aspnetcore-7.0 -_Layout
+///https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/razor?view=aspnetcore-3.1 -_cshtml
+///</summary>
+}
 @using WebApplicationProgect.Data; 
 <html lang="en">
 <head>
@@ -8,6 +14,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     @{ 
+        //Код в фигурных скобках не менять
         string g(int i)
         {
             return PageNames.PageName[i] + ".css";
@@ -44,6 +51,10 @@
             </li>
         </ul>
     </div>-->
+                <!-->
+                    Далее можно изменять свойства html элементов , кроме href у элемента 'a'
+                   ! Свойства начинающиеся с asp отвечают за взаимодействие с сервером не менять их значение!
+                    <-->
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">Home</a>
                 <div class="navbar-nav flex-grow-1 menu_">
 @{ 
