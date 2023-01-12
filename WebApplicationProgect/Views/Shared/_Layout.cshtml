@@ -13,7 +13,8 @@
     <title>@ViewData["Title"] - WebApplicationProgect</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    @{ 
+    <link rel="stylesheet" href="~/css/_Layout.css" />
+    @{
         //Код в фигурных скобках не менять
         string g(int i)
         {
@@ -22,59 +23,82 @@
         int l = (int)ViewData["position"];
         if (l < 0)
         {
-                <link rel="stylesheet" href="~/css/Index.css" />
+            <link rel="stylesheet" href="~/css/Index.css" />
         }
-            else
-            {
-                <link rel="stylesheet" href="~/css/@g(l)" />
-            }
+        else
+        {
+            <link rel="stylesheet" href="~/css/@g(l)" />
+        }
     }
 </head>
 
 <body>
     <header>
         <input type="hidden" value="@ViewData["position"]" id="page_n" />
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container ">
-                <!--<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplicationProgect</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-        <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </li>
-        </ul>
-    </div>-->
-                <!-->
-                    Далее можно изменять свойства html элементов , кроме href у элемента 'a'
-                   ! Свойства начинающиеся с asp отвечают за взаимодействие с сервером не менять их значение!
-                    <-->
+        <!--
+         Далее можно изменять свойства html элементов , кроме href у элемента 'a'
+        ! Свойства начинающиеся с asp отвечают за взаимодействие с сервером не менять их значение!
+         -->
+        <div class="container m-lg-3">
+
+
+
+            <nav class="navbar  bg-light">
+                @{
+                    string GetID(int id) => "ifr" + id.ToString();
+                }
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">Home</a>
-                <div class="navbar-nav flex-grow-1 menu_">
-@{ 
-    string GetID(int id) => "ifr" + id.ToString();
-}
-                    @for(int i = 0; i < PageNames.PageName.Length; i++)
-            {
-                   
-                   
-                        <a href="/Home/SetPage?id=@i.ToString()" id="@GetID(i)" style="color:aqua">
-                            @PageNames.PageName[i]
-                        </a>
-                    
-               
-            }
-                </div>
-            </div>
-        </nav>
-        <script src="~/js/_Layout.js"></script>
+                @for (int i = 0; i < PageNames.PageName.Length; i++)
+                {
+
+
+                    <a href="/Home/SetPage?id=@i.ToString()" id="@GetID(i)" style="color:aqua" class="navbar-brand">
+                        @PageNames.PageName[i]
+                    </a>
+
+
+                }
+            </nav>
+        </div>
+
     </header>
+    <main>
+
+    </main>
+    <!--Отобразить по центру-->
+    <div id="contact_form" style="align-content:end">
+        <div>
+            <h3>Связатся с нами</h3>
+            <button type="button" id="cancl_but">
+                <img src="~/img/cancel.png" width="20" height="20" />
+            </button>
+        </div>
+        <div id="react_content"></div>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+        <script src="@Url.Content("~/js/form_react.jsx")"></script>
+    </div>
+    <!--Отобразить в конце (внизу) страницы-->
+    <div id="contact_form_button" style="align-content:end;text-align:end;">
+        <button type="button" class="btn btn-info">Связатся с нами
+       
+        </button>
+    </div>
+    <script>
+        var form_div_ = document.getElementById("contact_form");
+        form_div_.style = "display:none";
+        var cf_but = document.getElementById("contact_form_button");
+        cf_but.addEventListener('click', function () {
+            var form_div = document.getElementById("contact_form");
+            form_div.style = "display:block";
+        });
+        var canl_b = document.getElementById("cancl_but");
+        canl_b.addEventListener('click', function () {
+            var form_div = document.getElementById("contact_form");
+            form_div.style = "display:none";
+        });
+    </script>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -89,7 +113,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+    <script src="~/js/_Layout.js"></script>
     @RenderSection("Scripts", required: false)
+
 </body>
+
 </html>
