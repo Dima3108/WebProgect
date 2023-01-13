@@ -83,13 +83,38 @@
             <form>
                 <div>
                     <label >Ваше имя</label>
-                    <input type="text" />
+                    <input type="text" id="us_n" />
                 </div>
                 <div>
                     <label>Ваш комментарий</label>
-                    <textarea></textarea>
+                    <textarea id="us_c"></textarea>
+                </div>
+                <div>
+                    <button type="button" id="res_b">Отправить</button>
                 </div>
             </form>
+            <script>
+                var b = document.getElementById('res_b');
+                b.addEventListener('click', function () {
+                    var loc = window.location.protocol + window.location.hostname;
+                    if (window.location.port != "") {
+                        loc += ":" + window.location.port;
+                    }
+                    alert(loc);
+                    var quest = '/Chat/ReadMessage/?user=' + document.getElementById('us_n').value + '&message=' + document.getElementById('us_c').value;
+                    var xhr = new XMLHttpRequest();
+                    var q = loc + quest;
+                    alert(q);
+                    xhr.open('GET', quest);
+                    xhr.send();
+                    xhr.onload = function () {
+                        if (xhr.status == 200) {
+                            var v = Number(xhr.response);
+                            alert(v == 0);
+                        }
+                    };
+                });
+            </script>
         </div>
     </div>
     
