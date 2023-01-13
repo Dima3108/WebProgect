@@ -6,7 +6,7 @@
 ///</summary>
 }
 @using WebApplicationProgect.Data; 
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,7 @@
             <link rel="stylesheet" href="~/css/@g(l)" />
         }
     }
+  
 </head>
 
 <body>
@@ -60,7 +61,7 @@
                 }
             </nav>
         </div>
-
+        <script ng- src="~/js/_Layout.js"></script>
     </header>
     <main>
 
@@ -73,16 +74,30 @@
                 <img src="~/img/cancel.png" width="20" height="20" />
             </button>
         </div>
-        <div id="react_content"></div>
-        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
-        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-        <script src="@Url.Content("~/js/form_react.jsx")"></script>
+        <!-- <div id="react_content"></div>
+     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+     <script src="@Url.Content("~/js/form_react.jsx")"></script>-->
+        <div id="angular_content">
+            <form>
+                <div>
+                    <label >Ваше имя</label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <label>Ваш комментарий</label>
+                    <textarea></textarea>
+                </div>
+            </form>
+        </div>
     </div>
+    
     <!--Отобразить в конце (внизу) страницы-->
     <div id="contact_form_button" style="align-content:end;text-align:end;">
-        <button type="button" class="btn btn-info">Связатся с нами
-       
+        <button type="button" class="btn btn-info">
+            Связатся с нами
+
         </button>
     </div>
     <script>
@@ -113,7 +128,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/_Layout.js"></script>
+
     @RenderSection("Scripts", required: false)
 
 </body>

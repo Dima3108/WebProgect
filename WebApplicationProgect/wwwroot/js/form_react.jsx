@@ -35,12 +35,31 @@ class MyDIVMail extends React.Component {
             </div>
     }
 }
+class MyLabelComment extends React.Component {
+    render() {
+        return <label>Ваш комментарий</label>
+    }
+}
+class MyTexareaComment extends React.Component {
+    render() {
+        return <textarea name="text_ar_com" className="form-control"></textarea>
+    }
+}
+class MyDIVComment extends React.Component {
+    render() {
+        return <div>
+            <MyLabelComment />
+            <MyTexareaComment/>
+            </div>
+    }
+}
 class MyForm extends React.Component {
     render() {
         return <form >
             <div className="form-group">
-            <MyDIVName />
+                <MyDIVName />
                 <MyDIVMail />
+                <MyDIVComment/>
                 </div>
             </form>
     }

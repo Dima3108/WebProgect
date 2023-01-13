@@ -1,13 +1,48 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<header>
+    <script src="~/lib/angular/angular.min.js"></script>
+</header>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<div id="content"></div>
+<!--<div id="content"></div>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 <script src="@Url.Content("~/js/Tutorial.jsx")"></script>
+-->
+<div ng-app="myApp" ng-controller="helContor">
+
+    <input type="text" ng-model="textval" placeholder="text" />
+    <label>Hellow: {{textval}} </label>
+    
+
+    
+
+        <label  id="hel1">Hello: {{cesh}} </label>
+        <script>
+            var myApp = angular.module('myApp', []);
+
+            myApp.controller('helContor', ['$scope', function ($scope) {
+                $scope.cesh = 'angular';
+            }
+            ]);
+        </script>
+
+        <script>
+            let w = setInterval(
+                function () {
+
+                    var date = new Date();
+                    var d = String(date.getSeconds());
+                  
+                    
+                }, 1000);
+
+        </script>
+    
+
+</div>
