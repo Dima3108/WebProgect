@@ -12,6 +12,10 @@ using JavaScriptEngineSwitcher.ChakraCore;
 using JavaScriptEngineSwitcher;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using React.AspNet;
+using React;
+using React.RenderFunctions;
+using React.TinyIoC;
+using React.Exceptions;
 namespace WebApplicationProgect
 {
     public class Startup
@@ -36,6 +40,7 @@ namespace WebApplicationProgect
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -44,16 +49,20 @@ namespace WebApplicationProgect
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            BabelConfig config_ = new BabelConfig();
+           
             app.UseReact(config =>
             {
-
+              //  config.SetLoadBabel(true);
+               // config.SetBabelConfig(config_);
             });
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
-
+            ReactSiteConfiguration.Configuration.AddScript(@"wwwroot\js\tutorial.jsx");
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

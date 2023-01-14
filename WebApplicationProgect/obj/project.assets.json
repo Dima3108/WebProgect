@@ -2670,7 +2670,8 @@
       "JavaScriptEngineSwitcher.ChakraCore.Native.win-x64 >= 3.20.6",
       "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86 >= 3.20.6",
       "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection >= 3.1.0",
-      "React.AspNet >= 5.2.12"
+      "React.AspNet >= 5.2.12",
+      "React.Core >= 5.2.12"
     ]
   },
   "packageFolders": {
@@ -2747,6 +2748,10 @@
             "version": "[3.1.0, )"
           },
           "React.AspNet": {
+            "target": "Package",
+            "version": "[5.2.12, )"
+          },
+          "React.Core": {
             "target": "Package",
             "version": "[5.2.12, )"
           }
