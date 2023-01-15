@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.V8;
 using JavaScriptEngineSwitcher;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using React.AspNet;
@@ -32,7 +33,7 @@ namespace WebApplicationProgect
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
-            services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName)
+            services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName)
                 .AddChakraCore();
             services.AddControllersWithViews();
         }
