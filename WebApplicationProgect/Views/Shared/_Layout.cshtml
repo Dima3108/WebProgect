@@ -67,6 +67,19 @@
 
     </main>
     <!--Отобразить по центру-->
+    <div id="ot_cont" style="display:none">
+        <h2>Ваше сообщение успешно принято!</h2>
+        <button type="button" id="res_b1" class="btn btn-success">
+            ОК
+        </button>
+        <script>
+            var e = document.getElementById("res_b1");
+            e.addEventListener('click', function () {
+                var f = document.getElementById("ot_cont");
+                f.style = "display:none";
+            })
+        </script>
+    </div>
     <div id="contact_form" style="align-content:end">
         <div>
             <h3>Связатся с нами</h3>
@@ -74,15 +87,16 @@
                 <img src="~/img/cancel.png" width="20" height="20" />
             </button>
         </div>
+
         <!-- <div id="react_content"></div>
-     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
-     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-     <script src="@Url.Content("~/js/form_react.jsx")"></script>-->
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+        <script src="@Url.Content("~/js/form_react.jsx")"></script>-->
         <div id="angular_content">
             <form>
                 <div>
-                    <label >Ваше имя</label>
+                    <label>Ваше имя</label>
                     <input type="text" id="us_n" />
                 </div>
                 <div>
@@ -100,24 +114,36 @@
                     if (window.location.port != "") {
                         loc += ":" + window.location.port;
                     }
-                    alert(loc);
+                    //alert(loc);
                     var quest = '/Chat/ReadMessage/?user=' + document.getElementById('us_n').value + '&message=' + document.getElementById('us_c').value;
                     var xhr = new XMLHttpRequest();
                     var q = loc + quest;
-                    alert(q);
+                   //  alert(q);
                     xhr.open('GET', quest);
                     xhr.send();
                     xhr.onload = function () {
                         if (xhr.status == 200) {
                             var v = Number(xhr.response);
-                            alert(v == 0);
+                           // alert(v);
+                            if (v >= 0) {
+                                var form_div = document.getElementById("contact_form");
+                                form_div.style = "display:none";
+                                var resf = document.getElementById("ot_cont");
+                                resf.style = "display:block";
+                                //var canl_b = document.getElementById("cancl_but");
+                                //canl_b.addEventListener('click', function () {
+                                
+                                // });
+                            }
+                            
                         }
                     };
                 });
             </script>
         </div>
+
     </div>
-    
+
     <!--Отобразить в конце (внизу) страницы-->
     <div id="contact_form_button" style="align-content:end;text-align:end;">
         <button type="button" class="btn btn-info">
