@@ -91,8 +91,3 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\staticwebassets\WebApplicationProgect.StaticWebAssets.Pack.cache
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\staticwebassets\msbuild.WebApplicationProgect.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\staticwebassets\msbuild.build.WebApplicationProgect.props
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.WebApplicationProgect.props
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.WebApplicationProgect.props
