@@ -9,13 +9,13 @@ var JsonModel = class {
     }
 }
 function UpdateContent() {
-var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/Chat/IsUpdate?hesh=' + sessionStorage.getItem("mes_hash"));
+//var xhr = new XMLHttpRequest();
+    /*xhr.open('GET', '/Chat/IsUpdate?hesh=' + sessionStorage.getItem("mes_hash"));
    
     xhr.onload = function () {
-        if (xhr.status == 200) {
-            if (xhr.responseText=="true") {
-                
+        if (xhr.status == 200) { */
+    if (sessionStorage.getItem("mes_nal") != null && sessionStorage.getItem("mes_nal")=="true") {
+               
                 var xhr2 = new XMLHttpRequest();
                 xhr2.open('GET', '/Chat/GetCurrentHesh');
                
@@ -52,15 +52,15 @@ xhr2.send();
                 }
                 xhr3.send();
             }
-        }
+     /*   }
         
     }
-    xhr.send();
+    xhr.send();*/
 }
-window.addEventListener('DOMContentLoad', function () {
+/*window.addEventListener('DOMContentLoad', function () {
     if (sessionStorage.getItem("mes_hash") == null) {
         sessionStorage.setItem("mes_hash", "@");
     }
     UpdateContent();
-});
+});*/
 setInterval(()=> UpdateContent(), 1000);

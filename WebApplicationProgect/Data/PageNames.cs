@@ -17,12 +17,20 @@ namespace WebApplicationProgect.Data
         /// </summary>
         public static readonly string[] PageName = new string[]
         {
-            "Тарифы",
+            //"Тарифы",
             "Наши достижения",
             //"Отзывы",
             "Контакты",
             "Чат"
         };
-        
+        public static int GetPagePos(string v)
+        {
+
+            for (int i = 0; i < PageName.Length; i++)
+                if (PageName[i] == v)
+                    return i;
+
+            return -1;
+        }
     }
 }

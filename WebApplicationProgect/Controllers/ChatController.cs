@@ -41,7 +41,7 @@ namespace WebApplicationProgect.Controllers
 
     public class ChatController : Controller
     {
-        private static readonly SHA512 sHA512 = SHA512.Create();
+        private static readonly SHA256 sHA = SHA256.Create();
         private class INT
         {
             public int Value { get; set; }
@@ -61,34 +61,19 @@ namespace WebApplicationProgect.Controllers
         private static string UpdateTotalHesh()
         {
             string h = "@";
-            lock(messages)
-            {
-                using (MemoryStream mem = new MemoryStream())
-                {
-
-
-                    foreach (Message m in messages)
-                        if (m is Message && m != null)
-                        {
-                            byte[] b = Convert.FromBase64String(m.hesh);
-                            mem.Write(b,0,b.Length);
-
-                        }
-                    h =Convert.ToBase64String( sHA512.ComputeHash(mem));
-                }
-            }
-            lock (TotalHesh)
-            {
-                TotalHesh = h;
-            }
+            var d = DateTime.Now;
+            h += d.ToString() + ":" + d.TimeOfDay.Milliseconds.ToString();
             return h;
+            
+
+           
         }
  private static int ToInt(ErroCodesChat codes) => (int)codes;
         private static readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
         [HttpGet]
         public int ReadMessage(string user,string message)
         {
-            Console.WriteLine($"user:{user},comment:{message}");
+            //Console.WriteLine($"user:{user},comment:{message}");
             if (user == null || message == null || user.Length < 0 || message.Length < 0)
                 return ToInt(ErroCodesChat.Empty_value);
             Message message1 = new Message(user, message);
@@ -99,8 +84,16 @@ namespace WebApplicationProgect.Controllers
                     if (pos.Value >= message.Length)
                         pos.Value = 0;
                     messages[pos.Value++] = message1;
-                    TotalHesh = UpdateTotalHesh();
+                    
+                    
                 }
+            }
+            lock (TotalHesh)
+                    {
+TotalHesh = UpdateTotalHesh();
+#if DEBUG
+                Console.WriteLine(TotalHesh);
+#endif
             }
 #if DEBUG
            

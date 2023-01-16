@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+}
+<div style="align-content:end;text-align:center">
+    <a href="/Home/SetPage?id=@PageNames.GetPagePos("Чат")" class="btn btn-primary">
+        <div id="mes_div">
+            <img src="~/img/message.png" />
+            <span id="text_m" class="badge badge-primary">
+                У вас нет непрочитанных сообщений
+            </span>
+        </div>
+    </a>
+</div>
+<script src="~/js/messageinf.js"></script>

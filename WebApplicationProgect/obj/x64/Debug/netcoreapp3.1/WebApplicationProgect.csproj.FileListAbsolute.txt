@@ -92,3 +92,4 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Чат.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Shared\MessageInf.cshtml.g.cs

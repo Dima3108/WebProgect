@@ -80,6 +80,7 @@
             })
         </script>
     </div>
+    <partial name="~/Views/Shared/MessageInf.cshtml" />
     <div id="contact_form" style="align-content:end">
         <div>
             <h3>Связатся с нами</h3>
@@ -104,12 +105,14 @@
                     <textarea id="us_c"></textarea>
                 </div>
                 <div>
-                    <button type="button" id="res_b">Отправить</button>
+                    <button type="button" id="res_b" class="active">Отправить</button>
                 </div>
             </form>
             <script>
                 var b = document.getElementById('res_b');
                 b.addEventListener('click', function () {
+                    var k = document.getElementById('res_b');
+                    k.disabled = "disabled";
                     var loc = window.location.protocol + window.location.hostname;
                     if (window.location.port != "") {
                         loc += ":" + window.location.port;
@@ -122,6 +125,8 @@
                     xhr.open('GET', quest);
                     xhr.send();
                     xhr.onload = function () {
+                        var k1 = document.getElementById('res_b');
+                        k1.disabled = "";
                         if (xhr.status == 200) {
                             var v = Number(xhr.response);
                            // alert(v);
