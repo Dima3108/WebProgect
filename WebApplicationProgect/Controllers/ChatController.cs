@@ -38,7 +38,27 @@ namespace WebApplicationProgect.Controllers
         }
         private static readonly SHA512 sHA512 = SHA512.Create();
     }
-
+    public class UsFile
+    {
+        public UsFile() { }
+        public UsFile(string s,string f,byte[] c)
+        {
+            user = s;
+            fname = f;
+            content = c;
+        }
+        public UsFile(string s,string f, char[] c)
+        {
+            content = new byte[c.Length];
+            for(int i = 0; i < c.Length; i++)
+            {
+                content[i] = (byte)c[i];
+            }
+        }
+        public string user { get; set; }
+        public string fname { get; set; }
+        public byte[] content { get; set; }
+    }
     public class ChatController : Controller
     {
         private static readonly SHA256 sHA = SHA256.Create();
@@ -118,6 +138,17 @@ TotalHesh = UpdateTotalHesh();
         {
 
             return JsonSerializer.Serialize(GetNotNULL(messages),jsonSerializerOptions);
+        }
+        [HttpPost]
+        public int WriteFileToServer(string us_name,string f_name,string content)
+        {
+            /*if (us_name == null || f_name == null || content == null)
+                return -1;
+            if (us_name.Length <= 0 || f_name.Length <= 0 || content.Length <= 0)
+                return -2;*/
+            UsFile usFile = new UsFile(us_name, f_name,content.ToCharArray());
+            Console.WriteLine($"user:{us_name},file:{f_name},content-len{content.Length}");
+            return 0;
         }
     }
 }

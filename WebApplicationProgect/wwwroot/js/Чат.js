@@ -8,6 +8,7 @@ var JsonModel = class {
         this.message = String(m);
     }
 }
+
 function UpdateContent() {
 //var xhr = new XMLHttpRequest();
     /*xhr.open('GET', '/Chat/IsUpdate?hesh=' + sessionStorage.getItem("mes_hash"));
@@ -63,4 +64,5 @@ xhr2.send();
     }
     UpdateContent();
 });*/
-setInterval(()=> UpdateContent(), 1000);
+setInterval(() => UpdateContent(), 1000);
+

@@ -18,11 +18,13 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.typescript.msbuild\4.9.4\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microsoft.typescript.msbuild\4.9.4\build\Microsoft.TypeScript.MSBuild.props')" />
     <Import Project="$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-x86\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-x86.props" Condition="Exists('$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-x86\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-x86.props')" />
     <Import Project="$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-x64\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-x64.props" Condition="Exists('$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-x64\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-x64.props')" />
     <Import Project="$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-arm\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-arm.props" Condition="Exists('$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-arm\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-arm.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_TypeScript_MSBuild Condition=" '$(PkgMicrosoft_TypeScript_MSBuild)' == '' ">C:\Users\Дмитрий\.nuget\packages\microsoft.typescript.msbuild\4.9.4</PkgMicrosoft_TypeScript_MSBuild>
     <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x86\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86>
     <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x64\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64>
     <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-arm\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm>
