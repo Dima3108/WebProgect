@@ -12,3 +12,4 @@ Index.cshtml - главная страница
 </div><div>
 Ознакомится с файлом _Layout.cshtml
 </div>
+Изменения вносить в ветку test_version
