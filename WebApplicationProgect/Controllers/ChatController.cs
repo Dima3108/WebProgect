@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Web;
 using System.IO;
 using System.Collections;
+using System.IO.Compression;
 
 namespace WebApplicationProgect.Controllers
 {
@@ -23,6 +24,7 @@ namespace WebApplicationProgect.Controllers
         public string author{get;set;}
         public string hesh { get; set; }
         public string label { get; set; }
+        public DateTime time { get; set; }
         public Message(string a,string m,string l)
         {
             author = a;
@@ -39,6 +41,7 @@ namespace WebApplicationProgect.Controllers
             byte[] RH = sHA512.ComputeHash(R);
            
             hesh = Convert.ToBase64String(RH);
+            time = DateTime.Now;
         }
         public Message()
         {
@@ -49,11 +52,12 @@ namespace WebApplicationProgect.Controllers
     public class UsFile
     {
         public UsFile() { }
-        public UsFile(string f,byte[] c)
+        public UsFile(string f,byte[] c,string lab)
         {
           //  user = s;
             fname = f;
             content = c;
+            label = lab;
         }
         public UsFile(string f, char[] c,string lab)
         {
@@ -72,6 +76,41 @@ namespace WebApplicationProgect.Controllers
     }
     public class ChatController : Controller
     {
+        private static byte DecodeByte(char x,char y)
+        {
+            int i1 = 0, i2 = 0;
+            for(int h=0;h<codes.Length;h++)
+            {
+                if (x == codes[h])
+                    i1 = h;
+                if (y == codes[h])
+                    i2 = h;
+            }
+            int r = (16 * i1) + i2;
+            return (byte)r;
+        }
+        private static readonly char[] codes = {'Q', 'W', 'E', 'R', 'T', 'Y',
+    'U', 'I', 'O', 'P', 'A', 'S',
+    'D', 'F', 'G', 'H'};
+        private static byte[] DecodeFile(byte[] f)
+        {
+            char[] r = new char[f.Length];
+            for (int i = 0; i < r.Length; i++)
+                r[i] = (char)f[i];
+            return DecodeFile(r);
+
+        }
+        private static byte[]DecodeFile(char[] f)
+        {
+            
+            char[] v = f;
+            byte[] output = new byte[v.Length / 2];
+            for(int i = 0; i < output.Length; i++)
+            {
+                output[i] = DecodeByte(v[(2 * i)], v[(2 * i) + 1]);
+            }
+            return output;
+        }
         private static readonly SHA256 sHA = SHA256.Create();
         private class INT
         {
@@ -91,12 +130,27 @@ namespace WebApplicationProgect.Controllers
                     M.Add(v);
             return M.ToArray();
         }
+        private static Message[]GetMessagesForTime(Message[]m,string dtime)
+        {
+            if (dtime == "@")
+                return m;
+            string v = dtime.Replace("@", "");
+            DateTime t = DateTime.Parse(v);
+            List<Message> l = new List<Message>();
+            foreach(var _m in m)
+            {
+                if (_m != null)
+                    if (DateTime.Parse(_m.time.ToString()) > t)
+                        l.Add(_m);
+            }
+            return l.ToArray();
+        }
         public ChatController()
         {
            /* for (int i = 0; i < messages.Length; i++)
                 messages[i] = new Message();*/
-            for (int i = 0; i < files.Length; i++)
-                files[i] = new UsFile();
+            /*for (int i = 0; i < files.Length; i++)
+                files[i] = new UsFile();*/
         }
         private static INT pos { get; set; } = 0;
         private static string TotalHesh { get; set; } = "@";
@@ -104,7 +158,7 @@ namespace WebApplicationProgect.Controllers
         {
             string h = "@";
             var d = DateTime.Now;
-            h += d.ToString() + ":" + d.TimeOfDay.Milliseconds.ToString();
+            h += d.ToString();
             return h;
             
 
@@ -114,7 +168,13 @@ namespace WebApplicationProgect.Controllers
         private static readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
         [HttpGet]
         public int ReadMessage(string user,string message,string label)
-        {
+        {lock (TotalHesh)
+                    {
+TotalHesh = UpdateTotalHesh();
+#if false
+                Console.WriteLine(TotalHesh);
+#endif
+            }
             //Console.WriteLine($"user:{user},comment:{message}");
             if (user == null || message == null || user.Length < 0 || message.Length < 0)
                 return ToInt(ErroCodesChat.Empty_value);
@@ -133,6 +193,7 @@ namespace WebApplicationProgect.Controllers
             {
 
                 messages[i] = message1;
+
                 /* lock (pos)
                  {
                      if (pos.Value >= message.Length)
@@ -146,13 +207,7 @@ namespace WebApplicationProgect.Controllers
                 messages[i].label = message1.label;
                 messages[i].message = message1.message;*/
             }
-            lock (TotalHesh)
-                    {
-TotalHesh = UpdateTotalHesh();
-#if false
-                Console.WriteLine(TotalHesh);
-#endif
-            }
+            
 #if DEBUG
            
             
@@ -172,17 +227,17 @@ TotalHesh = UpdateTotalHesh();
             return TotalHesh;
         }
         [HttpPost]
-        public string GetMessages()
+        public string GetMessages(string label)
         {
             var k = new Message[] { };
             lock (messages)
             {
              k=     GetNotNULL(messages);
             }
-          
+            k = GetMessagesForTime(k, label);
             string f= JsonSerializer.Serialize(k,jsonSerializerOptions);
 #if DEBUG
-            Console.WriteLine($"#{f}-----------------{k.Length}");
+            Console.WriteLine($"#{f}-----------------{k.Length}\nDataL:{label}");
 
 #endif
             return f;
@@ -196,7 +251,7 @@ TotalHesh = UpdateTotalHesh();
         public string GetTime()
         {
             DateTime dateTime = DateTime.Now;
-            return dateTime.TimeOfDay.ToString();
+            return dateTime.ToString();
         }
         [HttpPost]
         public int WriteFileToServer(string label,string f_name,string content)
@@ -210,20 +265,81 @@ TotalHesh = UpdateTotalHesh();
             int i;
             lock (dicPos)
             {
-                dicPos.Value++;
-                if (dicPos.Value > files.Length)
+                //dicPos.Value++;
+                if (dicPos.Value >= files.Length)
                 {
-                    dicPos = 0;
+                    dicPos.Value = 0;
                 }
-                i = dicPos;
+                i = dicPos.Value++;
+         Console.WriteLine(dicPos.Value);       
             }
-            lock (files[i])
+
+            lock (files)
             {
-                files[i].content = usFile.content;
-                files[i].fname = usFile.fname;
-                files[i].label = usFile.label;
+                /* files[i].content = usFile.content;
+                 files[i].fname = usFile.fname;
+                 files[i].label = usFile.label;*/
+                files[i] = usFile;
             }
             return 0;
+        }
+        [HttpGet]
+        public IActionResult DownloadFiles(string label)
+        {
+            List<UsFile> cesh = new List<UsFile>();
+            lock (files)
+            {
+                foreach (var f in files)
+                    if (f != null)
+                    {
+#if DEBUG
+                        Console.WriteLine(f.label + "$$" + label);
+#endif
+                        if (f.label == label)
+                            cesh.Add(f);
+                    }
+                       
+            }
+            Console.WriteLine(cesh.Count);
+                using (MemoryStream m = new MemoryStream())
+                {
+                    using (var zip = new ZipArchive(m, ZipArchiveMode.Create))
+                    {
+                    
+                       var e= zip.CreateEntry("файлы.txt");
+                    
+                       using(StreamWriter w=new StreamWriter(e.Open()))
+                        {
+                          if (cesh.Count == 0)
+                          {
+                            byte[] t = UnicodeEncoding.Unicode.GetBytes("файлы отсутствуют");
+                            w.WriteLine(UnicodeEncoding.Unicode.GetString(t));
+                          }
+                          else
+                          {
+                            foreach (var j in cesh)
+                                w.WriteLine(j.fname);
+                          } 
+                       }
+                    if (cesh.Count != 0)
+                    {
+                        foreach(var el in cesh)
+                        {
+                            var nenry = zip.CreateEntry(el.fname);
+                            using(Stream s = nenry.Open())
+                            {
+                                var buf = DecodeFile(el.content);
+                                s.Write(buf, 0, buf.Length);
+                            }
+                        }
+                    }
+                    }
+                    return File(m.ToArray(), "application/zip", "files.zip");
+                }
+              
+                //return File(t,"", "fileinfo.txt");
+            
+            //return JsonSerializer.Serialize(cesh.ToArray(), jsonSerializerOptions);
         }
     }
 }

@@ -36,10 +36,10 @@ function encode_buffer(buffer) {
            
        // alert(Number(buffer[i]));
     }
-    alert(tableencode.length);
-    alert(s);
+   // alert(tableencode.length);
+    //alert(s);
    
-    alert(s.length);
+    //alert(s.length);
     return s;
 }
 var p = document.getElementById('page_n');
@@ -77,7 +77,7 @@ file_but.addEventListener('click', function () {
                    // alert(encode_buffer(ar).length);
                      sessionStorage.setItem(f_name,r);
                     //alert(reader.result.length);
-                    alert(sessionStorage.getItem(f_name));
+                   // alert(sessionStorage.getItem(f_name));
                     //f_names += f_name + "\n";
                     // alert(f_names);
                     alert("\n файл " + f_name + " кэширован");
@@ -126,6 +126,7 @@ b.addEventListener('click', function () {
 xhrlab.send();
     xhrlab.onload = function () {
         if (xhrlab.status == 200) {
+           
             _LABEL_ +=String( xhrlab.response);
 var files_n = GetFileNames();
     if (files_n != null && files_n.length > 0) {
