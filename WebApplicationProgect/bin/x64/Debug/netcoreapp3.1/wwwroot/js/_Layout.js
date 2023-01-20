@@ -75,17 +75,7 @@ file_but.addEventListener('click', function () {
                     var r = encode_buffer(ar);
                   //  alert(ar.length);
                    // alert(encode_buffer(ar).length);
-                   
-                })
-                reader.readAsArrayBuffer(fdial.files[i]);
-               // reader.addEventListener('load',
-                function g() {
-                    // alert(reader.result == null);
-                    //alert(String(reader.result));
-                    alert(reader.result.byteLength);
-                    let bar = new Uint8Array(fdial.files[i].arrayBuffer());
-
-                    sessionStorage.setItem(f_name, encode_buffer(bar));
+                     sessionStorage.setItem(f_name,r);
                     //alert(reader.result.length);
                     alert(sessionStorage.getItem(f_name));
                     //f_names += f_name + "\n";
@@ -98,8 +88,8 @@ file_but.addEventListener('click', function () {
                     else {
                         sessionStorage.setItem('files_inf', f_name);
                     }
-                }
-                //});
+                })
+               
                 
             }
             else {
@@ -125,46 +115,44 @@ class JsonFile  {
 
 var b = document.getElementById('res_b');
 b.addEventListener('click', function () {
-    let s_cont = "";
+   /* let s_cont = "";
     for (var e = 0; e < 3 * 1024 * 1024; e++) {
         s_cont += "A";
-    }
-    var files_n = GetFileNames();
+    }*/
+    var xhrlab = new XMLHttpRequest();
+    let _LABEL_ = String(document.getElementById('us_n').value);
+   // let conrol_LValue = _LABEL_;
+    xhrlab.open('GET', '/Chat/GetTime/');
+xhrlab.send();
+    xhrlab.onload = function () {
+        if (xhrlab.status == 200) {
+            _LABEL_ +=String( xhrlab.response);
+var files_n = GetFileNames();
     if (files_n != null && files_n.length > 0) {
-        var USER = document.getElementById('us_n').value;
-        //const jscont = [];
+       
         for (var i = 0; i < files_n.length; i++) {
-            //var content = ReadFile(sessionStorage.getItem(files_n[i]));
+            
  var xhr_f = new XMLHttpRequest();
             var formdat = new FormData();
-            formdat.append("us_dat", USER);
+           
             formdat.append("f_name", files_n[i]);
             formdat.append("content", sessionStorage.getItem(files_n[i]));
+            formdat.append("label", _LABEL_);
             xhr_f.open('POST', '/Chat/WriteFileToServer/');
             xhr_f.send(formdat);
-            //jscont.push( new JsonFile(USER, files_n[i], content));
+               
         }
        
-       
-
-    }
-    else if (files_n == null) {
-        alert("null");
-    }
-    else {
-        alert("L<=0");
-    }
-    var k = document.getElementById('res_b');
+        }
+var k = document.getElementById('res_b');
     k.disabled = "disabled";
     var loc = window.location.protocol + window.location.hostname;
     if (window.location.port != "") {
         loc += ":" + window.location.port;
     }
-    //alert(loc);
-    var quest = '/Chat/ReadMessage/?user=' + document.getElementById('us_n').value + '&message=' + document.getElementById('us_c').value;
+    var quest = '/Chat/ReadMessage/?user=' + document.getElementById('us_n').value + '&message=' + document.getElementById('us_c').value +
+        "&label=" + _LABEL_;
     var xhr = new XMLHttpRequest();
-    var q = loc + quest;
-    //  alert(q);
     xhr.open('GET', quest);
     xhr.send();
     xhr.onload = function () {
@@ -172,18 +160,28 @@ b.addEventListener('click', function () {
         k1.disabled = "";
         if (xhr.status == 200) {
             var v = Number(xhr.response);
-            // alert(v);
             if (v >= 0) {
                 var form_div = document.getElementById("contact_form");
                 form_div.style = "display:none";
                 var resf = document.getElementById("ot_cont");
                 resf.style = "display:block";
-                //var canl_b = document.getElementById("cancl_but");
-                //canl_b.addEventListener('click', function () {
-
-                // });
+               
             }
 
         }
-    };
+        };
+
+
+           
+        }
+
+
+
+
+    }
+   
+   
+    
+    
+ 
 });

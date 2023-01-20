@@ -53,16 +53,8 @@ xhr2.send();
                 }
                 xhr3.send();
             }
-     /*   }
-        
-    }
-    xhr.send();*/
+   
 }
-/*window.addEventListener('DOMContentLoad', function () {
-    if (sessionStorage.getItem("mes_hash") == null) {
-        sessionStorage.setItem("mes_hash", "@");
-    }
-    UpdateContent();
-});*/
+
 setInterval(() => UpdateContent(), 1000);
 
