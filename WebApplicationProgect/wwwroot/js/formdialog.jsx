@@ -29,7 +29,7 @@ class MyInputText extends React.Component {
         super(props);
     }
     render() {
-        return <input type="text" id={this.props.id} />
+        return <input type="text" id={this.props.id} className="form-group" />
     }
 }
 class MyTextarea extends React.Component {
@@ -37,7 +37,7 @@ class MyTextarea extends React.Component {
         super(props);
     }
     render() {
-        return <textarea id={this.props.id} ></textarea>
+        return <textarea id={this.props.id} className="form-group"></textarea>
     }
 }
 class MyButton extends React.Component {
@@ -45,10 +45,24 @@ class MyButton extends React.Component {
         super(props);
     }
     render() {
-        return <button type="button" id={this.props.id}
-        >
-            {this.props.value}
-        </button>
+        if (this.props.id == "res_b") {
+            return <button type="button" id={this.props.id} className="btn btn-primary"
+            >
+                {this.props.value}
+            </button>
+        }
+        else if (this.props.id == "add_f_but") {
+            return <button type="button" id={this.props.id} className="btn btn-primary"
+            >
+                {this.props.value}
+            </button>
+        }
+        else {
+            return <button type="button" id={this.props.id} 
+            >
+                {this.props.value}
+            </button>
+        }
     }
 }
 class MySpan extends React.Component {
@@ -122,7 +136,9 @@ class MyFiles extends React.Component {
 
                             <button type="button" id={this.GenerateID(f)} onClick={
                                 (event) => this.DeleteFile(event,f)
-                            } >
+                            }
+                                className="btn btn-danger"
+                            >
                                 Удалить</button>
                             <label >файл {f}</label>
                             {

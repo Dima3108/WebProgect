@@ -39,6 +39,8 @@
         <!--
          Далее можно изменять свойства html элементов , кроме href у элемента 'a'
         ! Свойства начинающиеся с asp отвечают за взаимодействие с сервером не менять их значение!
+            Поработать над стилями .
+            Сделать чтобы на мобильных устройствах меню отоброжалось в строчку
          -->
         <div class="container m-lg-3">
 
@@ -60,13 +62,28 @@
 
                 }
             </nav>
+            <script>
+                var p = document.getElementById('page_n');
+                var val = Number(p.value);
+                for (var i = 0; i < 4; i++) {
+                    var t = document.getElementById('ifr' + i);
+
+                    t.style = "color:black";
+                    if (i == val && val != -1) {
+                        t.style = "color:green";
+                    }
+
+                }
+            </script>
         </div>
-        
+
     </header>
     <main>
 
     </main>
-    <!--Отобразить по центру-->
+    <!--Отобразить по центру.
+        Ограничит размер(ширину)
+        -->
     <div id="ot_cont" style="display:none">
         <h2>Ваше сообщение успешно принято!</h2>
         <button type="button" id="res_b1" class="btn btn-success">
@@ -81,46 +98,23 @@
         </script>
     </div>
     <partial name="~/Views/Shared/MessageInf.cshtml" />
+    <!--Ограничить размер формы(ширину),не более 540px для компьютера , 1/4 ширины мобильного устройства-->
     <div id="contact_form" style="align-content:end">
         <div>
-            <h3>Связатся с нами</h3>
+
+            <h3>Ваше сообщение</h3>
             <button type="button" id="cancl_but">
                 <img src="~/img/cancel.png" width="20" height="20" />
             </button>
         </div>
 
         <div id="react_content"></div>
+        <!--Эти скрипты отвечают за компиляцию React!-->
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
         <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
         <script src="@Url.Content("~/js/formdialog.jsx")"></script>
-        <!--  <div id="angular_content">
-          <form  enctype="multipart/form-data">
-              <div>
-                  <label>Ваше имя</label>
-                  <input type="text" id="us_n" />
-              </div>
-              <div>
-                  <label>Ваш комментарий</label>
-                  <textarea id="us_c"></textarea>
-              </div>
-              <div>
-                  <button type="button" id="add_f_but">Добавить файл</button>
-                  <div>
-                      <span id="file_load_log"></span>
-                  </div>
-                  <div>
-                      <span id="file_error_log"></span>
-                  </div>
-              </div>
-              <div>
-                  <button type="button" id="res_b" class="active">Отправить</button>
-              </div>
-          </form>
-          <script>
 
-          </script>
-      </div>-->
 
     </div>
 
@@ -153,7 +147,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - WebApplicationProgect - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - WebApplicationProgect
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -161,7 +155,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
-<script ng- src="~/js/_Layout.js"></script>
+    <script ng- src="~/js/_Layout.js" ></script>
 </body>
 
 </html>

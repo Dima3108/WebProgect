@@ -45,7 +45,7 @@ function encode_buffer(buffer) {
     //alert(s.length);
     return s;
 }
-var p = document.getElementById('page_n');
+/*var p = document.getElementById('page_n');
 var val = Number(p.value);
 for (var i = 0; i < 3; i++) {
     var t = document.getElementById('ifr' + i);
@@ -55,7 +55,7 @@ for (var i = 0; i < 3; i++) {
         t.style = "color:green";
     }
    
-}
+}*/
 var file_but = document.getElementById('add_f_but');
 file_but.addEventListener('click', function () {
     var fdial = document.createElement('input');

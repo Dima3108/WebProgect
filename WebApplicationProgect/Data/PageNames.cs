@@ -21,7 +21,8 @@ namespace WebApplicationProgect.Data
             "Наши достижения",
             //"Отзывы",
             "Контакты",
-            "Чат"
+            "Чат",
+            "О чате"
         };
         public static int GetPagePos(string v)
         {
