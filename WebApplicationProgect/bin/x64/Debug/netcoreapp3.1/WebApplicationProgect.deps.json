@@ -38,6 +38,7 @@
           "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86": "3.20.6",
           "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": "3.1.0",
           "JavaScriptEngineSwitcher.V8": "3.20.8",
+          "Microsoft.TypeScript.MSBuild": "4.9.4",
           "React.AspNet": "5.2.12",
           "React.Core": "5.2.12",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -546,6 +547,7 @@
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.NETCore.Targets/1.0.1": {},
+      "Microsoft.TypeScript.MSBuild/4.9.4": {},
       "Microsoft.Win32.Registry/5.0.0": {
         "dependencies": {
           "System.Security.AccessControl": "5.0.0",
@@ -2721,6 +2723,13 @@
       "sha512": "sha512-rkn+fKobF/cbWfnnfBOQHKVKIOpxMZBvlSHkqDWgBpwGDcLRduvs3D9OLGeV6GWGvVwNlVi2CBbTjuPmtHvyNw==",
       "path": "microsoft.netcore.targets/1.0.1",
       "hashPath": "microsoft.netcore.targets.1.0.1.nupkg.sha512"
+    },
+    "Microsoft.TypeScript.MSBuild/4.9.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HRuRwFqPik9OGy+SMRVFkbUx8dD+s/5jJ4Sq2p7ARNtchHVQqExIvLwfNBLqyFkNYL+/cbAXdzU5ZUZmnxQftQ==",
+      "path": "microsoft.typescript.msbuild/4.9.4",
+      "hashPath": "microsoft.typescript.msbuild.4.9.4.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/5.0.0": {
       "type": "package",

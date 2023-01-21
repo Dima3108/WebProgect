@@ -74,7 +74,6 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\lib\jquery-validation\dist\additional-methods.js
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\lib\jquery-validation\dist\jquery.validate.js
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\lib\jquery\dist\jquery.js
-C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\WebApplicationProgect.csproj.AssemblyReference.cache
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\img\cancel.png
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\lib\angular\angular.js
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\package-lock.json
@@ -93,3 +92,5 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\Чат.cshtml.g.cs
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Shared\MessageInf.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\libman.json
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\files.js
