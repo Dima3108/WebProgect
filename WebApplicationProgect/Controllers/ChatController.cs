@@ -369,7 +369,7 @@ f_lock.EnterWriteLock();
                         }
                     }
                     }
-                    return File(m.ToArray(), "application/zip", "files.zip");
+                    return File(m.ToArray(), "application/zip","#"+label+"files.zip");
                 }
               
                 //return File(t,"", "fileinfo.txt");

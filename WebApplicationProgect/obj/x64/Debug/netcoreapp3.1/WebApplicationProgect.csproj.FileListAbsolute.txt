@@ -95,3 +95,5 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\libman.json
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\files.js
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\WebApplicationProgect.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\messageinf.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\Чат.js

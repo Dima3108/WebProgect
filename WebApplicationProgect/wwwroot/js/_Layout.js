@@ -8,18 +8,21 @@
     return mas;
 }
  function GetFileNames() {
-    if (sessionStorage.getItem('files_inf') != null && sessionStorage.getItem('files_inf') != "") {
-        var str = sessionStorage.getItem('files_inf');
-        var strin_ = str.replace(" ", "").split("\n");
-        const m = [];
-        for (var i = 0; i < strin_.length; i++) {
-            if (strin_[i] != null && strin_[i] != "") {
-                m.push(String(strin_[i]));
-            }
-        }
-        return m;
-    }
-     return null;
+     if (sessionStorage.getItem('files_inf') != null && sessionStorage.getItem('files_inf') != "") {
+         var str = sessionStorage.getItem('files_inf');
+         var strin_ = str.replace(" ", "").split("\n");
+         const m = [];
+         for (var i = 0; i < strin_.length; i++) {
+             if (strin_[i] != null && strin_[i] != "") {
+                 m.push(String(strin_[i]));
+             }
+         }
+         return m;
+     }
+     else {
+         const v = [];
+         return v;
+     }
 }
 const tableencode = ['Q', 'W', 'E', 'R', 'T', 'Y',
     'U', 'I', 'O', 'P', 'A', 'S',
@@ -61,10 +64,11 @@ file_but.addEventListener('click', function () {
    // let f_names = "";
     const max_size = 1024 * 1024 * 3;
     let f_name = "";
-    let f_count = 0;
+    let f_count = GetFileNames().length;
+    //alert(Number(fdial.files.length + f_count));
     fdial.onchange = function () {
         //граничение на количество загружаемых файлов
-        if ((fdial.files.length - f_count) <= 3 && f_count <= 3) {
+        if (Number(fdial.files.length + f_count) <= 3 && f_count <= 3) {
             for (var i = 0; i < fdial.files.length; i++) {
                 if (fdial.files[i].size <= max_size) {
 
@@ -79,11 +83,7 @@ file_but.addEventListener('click', function () {
                         //  alert(ar.length);
                         // alert(encode_buffer(ar).length);
                         sessionStorage.setItem(f_name, r);
-                        //alert(reader.result.length);
-                        // alert(sessionStorage.getItem(f_name));
-                        //f_names += f_name + "\n";
-                        // alert(f_names);
-                        // alert("\n файл " + f_name + " кэширован");
+                        
                         document.getElementById('file_load_log').textContent += "\n файл " + f_name + " кэширован";
                         if (sessionStorage.getItem('files_inf') != null) {
                             sessionStorage.setItem('files_inf', f_name + "\n" + sessionStorage.getItem('files_inf'));
@@ -91,7 +91,9 @@ file_but.addEventListener('click', function () {
                         else {
                             sessionStorage.setItem('files_inf', f_name);
                         }
-                        f_count++;
+                        f_count = GetFileNames().length;
+                       // alert(f_count);
+                       // alert(GetFileNames().length);
                     })
 
 
@@ -102,7 +104,7 @@ file_but.addEventListener('click', function () {
             }
         }
         else {
-            document.getElementById('file_error_log').textContent += "максимальное число загруженных файлов недолжно быть больше 3";
+            document.getElementById('file_error_log').textContent = "максимальное число загруженных файлов недолжно быть больше 3";
         }
         //sessionStorage.setItem('files_inf', f_names);
         
@@ -135,9 +137,9 @@ xhrlab.send();
         if (xhrlab.status == 200) {
            
             _LABEL_ +=String( xhrlab.response);
-var files_n = GetFileNames();
+let files_n = GetFileNames();
     if (files_n != null && files_n.length > 0) {
-       
+        document.getElementById('file_load_log').textContent = "Файлы загружаются на сервер";
         for (var i = 0; i < files_n.length; i++) {
             
  var xhr_f = new XMLHttpRequest();
@@ -146,10 +148,18 @@ var files_n = GetFileNames();
             formdat.append("f_name", files_n[i]);
             formdat.append("content", sessionStorage.getItem(files_n[i]));
             formdat.append("label", _LABEL_);
-            xhr_f.open('POST', '/Chat/WriteFileToServer/');
+            xhr_f.open('POST', '/Chat/WriteFileToServer/',false);
             xhr_f.onload = function () {
                 if (xhr_f.status == 200) {
-                    sessionStorage.removeItem(files_n[i]);
+                    sessionStorage.removeItem(files_n);
+                    var v = sessionStorage.getItem('files_inf');
+                    alert(String(formdat.get("f_name")));
+
+                    sessionStorage.setItem('files_inf', v.replace(formdat.get("f_name"), ''));
+                    alert(sessionStorage.getItem('files_inf'));
+                    if (i == files_n.length - 1) {
+                        document.getElementById('file_load_log').textContent = "Файлы загружены на сервер";
+                    }
                 }
             }
             xhr_f.send(formdat);
