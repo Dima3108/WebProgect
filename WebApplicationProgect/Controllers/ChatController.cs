@@ -10,7 +10,7 @@ using System.Web;
 using System.IO;
 using System.Collections;
 using System.IO.Compression;
-
+using System.Threading;
 namespace WebApplicationProgect.Controllers
 {
     public enum ErroCodesChat
@@ -247,6 +247,8 @@ TotalHesh = UpdateTotalHesh();
         private const int max_userf_count = 20;
         private const int max_file_count = 3;
         private static UsFile[] files = new UsFile[max_userf_count * max_file_count];
+        private static string[] f_labels = new string[max_userf_count * max_file_count];
+        private  ReaderWriterLockSlim f_lock = new ReaderWriterLockSlim();
         [HttpGet]
         public string GetTime()
         {
@@ -280,8 +282,41 @@ TotalHesh = UpdateTotalHesh();
                  files[i].fname = usFile.fname;
                  files[i].label = usFile.label;*/
                 files[i] = usFile;
+f_lock.EnterWriteLock();
+            try
+            {
+                f_labels[i] = label;
+
             }
+            finally
+            {
+                f_lock.ExitWriteLock();
+            }
+            }
+            
             return 0;
+        }
+        [HttpGet]
+        public bool AreThereFilesToDownload(string label)
+        {
+            f_lock.EnterReadLock();
+            bool v=false;
+            try
+            {
+                for(int i = 0; i < f_labels.Length; i++)
+                {
+                    if(f_labels[i]==label)
+                    {
+                        v = true;
+                        break;
+                    }
+                }
+            }
+            finally
+            {
+                f_lock.ExitReadLock();
+            }
+            return v;
         }
         [HttpGet]
         public IActionResult DownloadFiles(string label)

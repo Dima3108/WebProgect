@@ -60,17 +60,30 @@ if (sessionStorage.getItem("mes_nal") != null && sessionStorage.getItem("mes_nal
                         var d = document.getElementById('chat_cont');
                        // d.innerHTML = "";
                         for (var i = 0; i < json_d.length; i++) {
-                            var el = document.createElement('div');
+                            let el = document.createElement('div');
                             var lab = document.createElement('label');
                             lab.textContent = json_d[i].author;
                             el.appendChild(lab);
                             var tetxa = document.createElement('textarea');
                             tetxa.value = json_d[i].message;
-                            var a_ = document.createElement('a');
+                            let xhr_fnal = new XMLHttpRequest();
+                            xhr_fnal.open('GET', '/Chat/AreThereFilesToDownload/?label=' + String(json_d[i].label), false);
+                            xhr_fnal.onload = function () {
+                                if (xhr_fnal.status == 200) {
+                                    alert(String(xhr_fnal.response));
+
+                                    if (String(xhr_fnal.response) == "true") {
+ var a_ = document.createElement('a');
                             a_.href = "/Chat/DownloadFiles/?label=" + json_d[i].label;
                             a_.textContent = "Скачать файлы";
                             el.appendChild(a_);
+                                    }
+                                }
+                            }
+                            xhr_fnal.send();
+                           
                             el.appendChild(tetxa);
+
                             //DownloadFiles(String(json_d[i].label));
 
                             d.appendChild(el);

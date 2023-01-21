@@ -58,45 +58,51 @@ file_but.addEventListener('click', function () {
     var fdial = document.createElement('input');
     fdial.type = "file";
    
-    let f_names = "";
+   // let f_names = "";
     const max_size = 1024 * 1024 * 3;
     let f_name = "";
+    let f_count = 0;
     fdial.onchange = function () {
-        for (var i = 0; i < fdial.files.length; i++) {
-            if (fdial.files[i].size <= max_size) {
+        if ((fdial.files.length - f_count) <= 3 && f_count <= 3) {
+            for (var i = 0; i < fdial.files.length; i++) {
+                if (fdial.files[i].size <= max_size) {
 
-               
-                const reader = new FileReader();
-                f_name = fdial.files[i].name;
-                var file_ = fdial.files[i];
-                file_.arrayBuffer().then((value) => {
-                   // alert(value);
-                    var ar = new Uint8Array(value);
-                    var r = encode_buffer(ar);
-                  //  alert(ar.length);
-                   // alert(encode_buffer(ar).length);
-                     sessionStorage.setItem(f_name,r);
-                    //alert(reader.result.length);
-                   // alert(sessionStorage.getItem(f_name));
-                    //f_names += f_name + "\n";
-                    // alert(f_names);
-                    alert("\n файл " + f_name + " кэширован");
-                    document.getElementById('file_load_log').textContent += "\n файл " + f_name + " кэширован";
-                    if (sessionStorage.getItem('files_inf') != null) {
-                        sessionStorage.setItem('files_inf', f_name + "\n" + sessionStorage.getItem('files_inf'));
-                    }
-                    else {
-                        sessionStorage.setItem('files_inf', f_name);
-                    }
-                })
-               
-                
-            }
-            else {
-                document.getElementById('file_error_log').textContent += "размер файла " + fdial.files[i].name + " превышает 3 мб\n";
+
+                    // const reader = new FileReader();
+                    f_name = fdial.files[i].name;
+                    var file_ = fdial.files[i];
+                    file_.arrayBuffer().then((value) => {
+                        // alert(value);
+                        var ar = new Uint8Array(value);
+                        var r = encode_buffer(ar);
+                        //  alert(ar.length);
+                        // alert(encode_buffer(ar).length);
+                        sessionStorage.setItem(f_name, r);
+                        //alert(reader.result.length);
+                        // alert(sessionStorage.getItem(f_name));
+                        //f_names += f_name + "\n";
+                        // alert(f_names);
+                        // alert("\n файл " + f_name + " кэширован");
+                        document.getElementById('file_load_log').textContent += "\n файл " + f_name + " кэширован";
+                        if (sessionStorage.getItem('files_inf') != null) {
+                            sessionStorage.setItem('files_inf', f_name + "\n" + sessionStorage.getItem('files_inf'));
+                        }
+                        else {
+                            sessionStorage.setItem('files_inf', f_name);
+                        }
+                        f_count++;
+                    })
+
+
+                }
+                else {
+                    document.getElementById('file_error_log').textContent += "размер файла " + fdial.files[i].name + " превышает 3 мб\n";
+                }
             }
         }
-        
+        else {
+            document.getElementById('file_error_log').textContent += "максимальное число загруженных файлов недолжно быть больше 3";
+        }
         //sessionStorage.setItem('files_inf', f_names);
         
     }
@@ -140,6 +146,11 @@ var files_n = GetFileNames();
             formdat.append("content", sessionStorage.getItem(files_n[i]));
             formdat.append("label", _LABEL_);
             xhr_f.open('POST', '/Chat/WriteFileToServer/');
+            xhr_f.onload = function () {
+                if (xhr_f.status == 200) {
+                    sessionStorage.removeItem(files_n[i]);
+                }
+            }
             xhr_f.send(formdat);
                
         }
