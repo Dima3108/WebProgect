@@ -63,7 +63,7 @@ namespace WebApplicationProgect
 
             app.UseAuthorization();
             ReactSiteConfiguration.Configuration.AddScript(@"wwwroot\js\tutorial.jsx");
-            
+            Console.WriteLine("is startup!");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

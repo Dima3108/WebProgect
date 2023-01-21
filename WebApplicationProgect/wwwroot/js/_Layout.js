@@ -63,6 +63,7 @@ file_but.addEventListener('click', function () {
     let f_name = "";
     let f_count = 0;
     fdial.onchange = function () {
+        //граничение на количество загружаемых файлов
         if ((fdial.files.length - f_count) <= 3 && f_count <= 3) {
             for (var i = 0; i < fdial.files.length; i++) {
                 if (fdial.files[i].size <= max_size) {
