@@ -183,12 +183,17 @@ var k = document.getElementById('res_b');
         k1.disabled = "";
         if (xhr.status == 200) {
             var v = Number(xhr.response);
-            if (v >= 0) {
-                var form_div = document.getElementById("contact_form");
+            var form_div = document.getElementById("contact_form");
                 form_div.style = "display:none";
+            if (v >= 0) {
+                
                 var resf = document.getElementById("ot_cont");
                 resf.style = "display:block";
-               
+
+            }
+            else {
+                var rese = document.getElementById("ot_cont_er");
+                rese.style = "display:block";
             }
 
         }

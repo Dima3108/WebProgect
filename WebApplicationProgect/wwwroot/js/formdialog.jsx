@@ -155,11 +155,11 @@ class MyFiles extends React.Component {
 }
 ReactDOM.render(React.createElement(MyForm, {},
     React.createElement(MyDIV, {},
-        React.createElement(MyLabel, { value: "Ваше имя:" }),
+        React.createElement(MyLabel, { value: "Ваше имя(до 35 cимволов):" }),
         React.createElement(MyInputText, { id:"us_n"})
     ),
     React.createElement(MyDIV, {},
-        React.createElement(MyLabel, { value: "Ваш комментарий" }),
+        React.createElement(MyLabel, { value: "Ваш комментарий(до 4096 символов)" }),
         React.createElement(MyTextarea, { id:"us_c"})
     ),
     React.createElement(MyDIV, {},
