@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6z6QVijzcBi07hc1v7+ZF2X3tL+xV291Us828wIJ6KNTmcCX8TuIweejFZX8Nj20AXLIPo/w/xAKkc0VmuDLQ==",
+  "dgSpecHash": "a6jZ2m9UzCtEp/h3xqDT5xdod5KTgM43fxH8dx+RywGhIf+DsrjGxwNOuNhUyPvI1Id8ZoJ5yBUpWDkrWJ3+ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий\\github_repo\\WebProgect\\WebApplicationProgect\\WebApplicationProgect.csproj",
   "expectedPackageFiles": [
@@ -13,10 +13,12 @@
     "C:\\Users\\Дмитрий\\.nuget\\packages\\javascriptengineswitcher.core\\3.19.0\\javascriptengineswitcher.core.3.19.0.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\javascriptengineswitcher.extensions.msdependencyinjection\\3.1.0\\javascriptengineswitcher.extensions.msdependencyinjection.3.1.0.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\javascriptengineswitcher.v8\\3.20.8\\javascriptengineswitcher.v8.3.20.8.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\javascriptengineswitcher.v8.native.win-x64\\3.20.8\\javascriptengineswitcher.v8.native.win-x64.3.20.8.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\jspool\\4.0.0\\jspool.4.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.clearscript.core\\7.3.6\\microsoft.clearscript.core.7.3.6.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.clearscript.v8\\7.3.6\\microsoft.clearscript.v8.7.3.6.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.clearscript.v8.icudata\\7.3.6\\microsoft.clearscript.v8.icudata.7.3.6.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.clearscript.v8.native.win-x64\\7.3.6\\microsoft.clearscript.v8.native.win-x64.7.3.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",

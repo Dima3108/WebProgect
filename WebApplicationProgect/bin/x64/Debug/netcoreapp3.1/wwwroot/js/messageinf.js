@@ -20,7 +20,7 @@
     }
     xhr.send();
 }
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', function() {
     if (sessionStorage.getItem("mes_hash") == null) {
         sessionStorage.setItem("mes_hash", "@");
     }

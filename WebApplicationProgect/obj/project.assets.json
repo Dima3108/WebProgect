@@ -123,6 +123,12 @@
           }
         }
       },
+      "JavaScriptEngineSwitcher.V8.Native.win-x64/3.20.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ClearScript.V8.Native.win-x64": "7.3.6"
+        }
+      },
       "JSPool/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -168,6 +174,18 @@
         },
         "runtime": {
           "lib/netstandard1.0/ClearScript.V8.ICUData.dll": {}
+        }
+      },
+      "Microsoft.ClearScript.V8.Native.win-x64/7.3.6": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.ClearScript.V8.Native.win-x64.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/ClearScriptV8.win-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
         }
       },
       "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
@@ -961,6 +979,22 @@
         "v8-license.txt"
       ]
     },
+    "JavaScriptEngineSwitcher.V8.Native.win-x64/3.20.8": {
+      "sha512": "+FJQZaI1dDHtfYTirdbs3NfPde/BqXe99kyJ62V6JvmEdMJflNv46AgCi37cuRnr83UlLuUmW51TkytmREjOiQ==",
+      "type": "package",
+      "path": "javascriptengineswitcher.v8.native.win-x64/3.20.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "clearscript-license.txt",
+        "icon.png",
+        "javascriptengineswitcher.v8.native.win-x64.3.20.8.nupkg.sha512",
+        "javascriptengineswitcher.v8.native.win-x64.nuspec",
+        "readme.txt",
+        "v8-license.txt"
+      ]
+    },
     "JSPool/4.0.0": {
       "sha512": "r+AeQ9R50HxU+HLqASYvZz6Mvg7RmZwEnCVhQ+xGYVexFjYYqlkW6by9HaflGaHjy+/28YLbb3qxDLRJ3AbZGQ==",
       "type": "package",
@@ -1058,6 +1092,29 @@
         "licenses/V8/LICENSE.v8",
         "microsoft.clearscript.v8.icudata.7.3.6.nupkg.sha512",
         "microsoft.clearscript.v8.icudata.nuspec"
+      ]
+    },
+    "Microsoft.ClearScript.V8.Native.win-x64/7.3.6": {
+      "sha512": "gC7msJ4Y9EFddksWLberFzWh6dmPUJ7MfrgvACdLO5qsDs2bBeVkeBGLNH98CkBAg2a+5aYoJV8JpaJ/P9Tong==",
+      "type": "package",
+      "path": "microsoft.clearscript.v8.native.win-x64/7.3.6",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "build/Microsoft.ClearScript.V8.Native.win-x64.props",
+        "images/ClearScript.png",
+        "licenses/ClearScript/License.txt",
+        "licenses/V8/LICENSE",
+        "licenses/V8/LICENSE.fdlibm",
+        "licenses/V8/LICENSE.strongtalk",
+        "licenses/V8/LICENSE.v8",
+        "microsoft.clearscript.v8.native.win-x64.7.3.6.nupkg.sha512",
+        "microsoft.clearscript.v8.native.win-x64.nuspec",
+        "runtimes/win-x64/native/ClearScriptV8.win-x64.dll",
+        "tools/Install.ps1",
+        "tools/Uninstall.ps1"
       ]
     },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
@@ -3169,6 +3226,7 @@
       "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86 >= 3.20.6",
       "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection >= 3.1.0",
       "JavaScriptEngineSwitcher.V8 >= 3.20.8",
+      "JavaScriptEngineSwitcher.V8.Native.win-x64 >= 3.20.8",
       "Microsoft.TypeScript.MSBuild >= 4.9.4",
       "React.AspNet >= 5.2.12",
       "React.Core >= 5.2.12"
@@ -3248,6 +3306,10 @@
             "version": "[3.1.0, )"
           },
           "JavaScriptEngineSwitcher.V8": {
+            "target": "Package",
+            "version": "[3.20.8, )"
+          },
+          "JavaScriptEngineSwitcher.V8.Native.win-x64": {
             "target": "Package",
             "version": "[3.20.8, )"
           },
