@@ -40,7 +40,10 @@
     display:compact;
     
 }
-
+#nav_men{
+    align-content:center;
+    text-align:center;
+}
 
 
 * {
