@@ -5,14 +5,18 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\mikle\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Дмитрий\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages;C:\Program Files\dotnet\sdk\NuGetFallbackFolder</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.3.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.2</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\mikle\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Дмитрий\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.typescript.msbuild\4.9.4\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microsoft.typescript.msbuild\4.9.4\build\Microsoft.TypeScript.MSBuild.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.clearscript.v8.native.win-x64\7.3.6\build\Microsoft.ClearScript.V8.Native.win-x64.props" Condition="Exists('$(NuGetPackageRoot)microsoft.clearscript.v8.native.win-x64\7.3.6\build\Microsoft.ClearScript.V8.Native.win-x64.props')" />
@@ -21,10 +25,10 @@
     <Import Project="$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-arm\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-arm.props" Condition="Exists('$(NuGetPackageRoot)javascriptengineswitcher.chakracore.native.win-arm\3.20.6\build\JavaScriptEngineSwitcher.ChakraCore.Native.win-arm.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_TypeScript_MSBuild Condition=" '$(PkgMicrosoft_TypeScript_MSBuild)' == '' ">C:\Users\mikle\.nuget\packages\microsoft.typescript.msbuild\4.9.4</PkgMicrosoft_TypeScript_MSBuild>
-    <PkgMicrosoft_ClearScript_V8_Native_win-x64 Condition=" '$(PkgMicrosoft_ClearScript_V8_Native_win-x64)' == '' ">C:\Users\mikle\.nuget\packages\microsoft.clearscript.v8.native.win-x64\7.3.6</PkgMicrosoft_ClearScript_V8_Native_win-x64>
-    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86)' == '' ">C:\Users\mikle\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x86\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86>
-    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64)' == '' ">C:\Users\mikle\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x64\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64>
-    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm)' == '' ">C:\Users\mikle\.nuget\packages\javascriptengineswitcher.chakracore.native.win-arm\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm>
+    <PkgMicrosoft_TypeScript_MSBuild Condition=" '$(PkgMicrosoft_TypeScript_MSBuild)' == '' ">C:\Users\Дмитрий\.nuget\packages\microsoft.typescript.msbuild\4.9.4</PkgMicrosoft_TypeScript_MSBuild>
+    <PkgMicrosoft_ClearScript_V8_Native_win-x64 Condition=" '$(PkgMicrosoft_ClearScript_V8_Native_win-x64)' == '' ">C:\Users\Дмитрий\.nuget\packages\microsoft.clearscript.v8.native.win-x64\7.3.6</PkgMicrosoft_ClearScript_V8_Native_win-x64>
+    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x86\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x86>
+    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64 Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-x64\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-x64>
+    <PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm Condition=" '$(PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm)' == '' ">C:\Users\Дмитрий\.nuget\packages\javascriptengineswitcher.chakracore.native.win-arm\3.20.6</PkgJavaScriptEngineSwitcher_ChakraCore_Native_win-arm>
   </PropertyGroup>
 </Project>
