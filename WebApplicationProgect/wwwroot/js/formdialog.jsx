@@ -90,10 +90,10 @@ class MyFiles extends React.Component {
         return "}";
     }
     DeleteFile=(a,file)=> {
-        //alert(file);
+      
         sessionStorage.removeItem(file);
         var v = sessionStorage.getItem('files_inf');
-        //alert(String(formdat.get("f_name")));
+       
 
         sessionStorage.setItem('files_inf', v.replace(file, ''));
         alert(sessionStorage.getItem('files_inf'));
@@ -119,13 +119,13 @@ class MyFiles extends React.Component {
     }
     Update() {
         var n = this.GetNames();
-        //if (n.length > 0) {
+      
             this.setState(
                 state => ({
                     Files: n
                 })
             );
-        //}
+     
     }
     render() {
         return <div className="storageCont">

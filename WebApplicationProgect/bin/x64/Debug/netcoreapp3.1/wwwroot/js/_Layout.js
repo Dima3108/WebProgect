@@ -137,36 +137,49 @@ xhrlab.send();
         if (xhrlab.status == 200) {
            
             _LABEL_ +=String( xhrlab.response);
-let files_n = GetFileNames();
-    if (files_n != null && files_n.length > 0) {
-        document.getElementById('file_load_log').textContent = "Файлы загружаются на сервер";
-        for (var i = 0; i < files_n.length; i++) {
-            
- var xhr_f = new XMLHttpRequest();
-            var formdat = new FormData();
-           
-            formdat.append("f_name", files_n[i]);
-            formdat.append("content", sessionStorage.getItem(files_n[i]));
-            formdat.append("label", _LABEL_);
-            xhr_f.open('POST', '/Chat/WriteFileToServer/',false);
-            xhr_f.onload = function () {
-                if (xhr_f.status == 200) {
-                    sessionStorage.removeItem(files_n);
-                    var v = sessionStorage.getItem('files_inf');
-                    alert(String(formdat.get("f_name")));
+            let files_n = GetFileNames();
+            //контроль наличия имени
+            if (files_n != null && files_n.length > 0 &&
+                String(document.getElementById('us_n').value) != null &&
+                String(document.getElementById('us_n').value).length > 0 &&
+                String(document.getElementById('us_c').value) != null &&
+                String(document.getElementById('us_c').value).length > 0) {
+                document.getElementById('file_load_log').textContent = "Файлы загружаются на сервер";
+                for (var i = 0; i < files_n.length; i++) {
 
-                    sessionStorage.setItem('files_inf', v.replace(formdat.get("f_name"), ''));
-                    alert(sessionStorage.getItem('files_inf'));
-                    if (i == files_n.length - 1) {
-                        document.getElementById('file_load_log').textContent = "Файлы загружены на сервер";
+                    var xhr_f = new XMLHttpRequest();
+                    var formdat = new FormData();
+
+                    formdat.append("f_name", files_n[i]);
+                    formdat.append("content", sessionStorage.getItem(files_n[i]));
+                    formdat.append("label", _LABEL_);
+                    xhr_f.open('POST', '/Chat/WriteFileToServer/', false);
+                    xhr_f.onload = function () {
+                        if (xhr_f.status == 200) {
+                            sessionStorage.removeItem(files_n);
+                            var v = sessionStorage.getItem('files_inf');
+                            alert(String(formdat.get("f_name")));
+
+                            sessionStorage.setItem('files_inf', v.replace(formdat.get("f_name"), ''));
+                            alert(sessionStorage.getItem('files_inf'));
+                            if (i == files_n.length - 1) {
+                                document.getElementById('file_load_log').textContent = "Файлы загружены на сервер";
+                            }
+                        }
                     }
+                    xhr_f.send(formdat);
+
+                }
+
+            }
+            else {
+                if (document.getElementById('us_c').value == null || String(document.getElementById('us_c').value).length <= 0) {
+                    document.getElementById('file_error_log').textContent = "Вы не ввели комментарий";
+                }
+                if (document.getElementById('us_n').value == null || String(document.getElementById('us_n').value).length <= 0) {
+                    document.getElementById('file_error_log').textContent = "Вы не ввели имя";
                 }
             }
-            xhr_f.send(formdat);
-               
-        }
-       
-        }
 var k = document.getElementById('res_b');
     k.disabled = "disabled";
     var loc = window.location.protocol + window.location.hostname;

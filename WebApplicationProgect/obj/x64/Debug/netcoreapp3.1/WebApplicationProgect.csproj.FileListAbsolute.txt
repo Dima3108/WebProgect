@@ -100,3 +100,6 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\runtimes\win-x64\native\ClearScriptV8.win-x64.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\О чате.cshtml.g.cs
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Debug\netcoreapp3.1\Razor\Views\Home\О разработчиках.cshtml.g.cs
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\react\787.28cb0dcd.chunk.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\react\main.a0d0c453.js
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\js\react\main.a0d0c453.js.LICENSE.txt
