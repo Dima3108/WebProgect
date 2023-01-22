@@ -130,7 +130,7 @@
     </div>
     <partial name="~/Views/Shared/MessageInf.cshtml" />
     <!--Ограничить размер формы(ширину),не более 540px для компьютера , 1/4 ширины мобильного устройства-->
-    <div id="contact_form" style="align-content:end">
+    <div id="contact_form" style="align-content:end;display:none">
         <div>
 
             <h3>Ваше сообщение</h3>
@@ -157,7 +157,7 @@
 
         </button>
     </div>
-    <script>
+    <script defer>
         var form_div_ = document.getElementById("contact_form");
         form_div_.style = "display:none";
         var cf_but = document.getElementById("contact_form_button");
@@ -187,7 +187,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
-    <script ng- src="~/js/_Layout.js"></script>
+    <script defer src="~/js/_Layout.js"></script>
 </body>
 
 </html>
