@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2023-01-22T16:20:43.9292693Z;</History>
+  </PropertyGroup>
+</Project>
