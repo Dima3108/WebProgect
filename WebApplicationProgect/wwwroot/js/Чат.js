@@ -70,12 +70,14 @@ if (sessionStorage.getItem("mes_nal") != null && sessionStorage.getItem("mes_nal
                             xhr_fnal.open('GET', '/Chat/AreThereFilesToDownload/?label=' + String(json_d[i].label), false);
                             xhr_fnal.onload = function () {
                                 if (xhr_fnal.status == 200) {
-                                    alert(String(xhr_fnal.response));
+                                    //скачивание если файлы есть
+                                    //alert(String(xhr_fnal.response));
 
                                     if (String(xhr_fnal.response) == "true") {
  var a_ = document.createElement('a');
                             a_.href = "/Chat/DownloadFiles/?label=" + json_d[i].label;
-                            a_.textContent = "Скачать файлы";
+                                        a_.textContent = "Скачать файлы";
+                                        
                             el.appendChild(a_);
                                     }
                                 }

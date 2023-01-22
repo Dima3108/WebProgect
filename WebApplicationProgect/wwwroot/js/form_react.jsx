@@ -24,7 +24,7 @@ class MyLableMail extends React.Component {
 }
 class MyInputMail extends React.Component {
     render() {
-        return <input type="email" name="your_email" />
+        return <input type="email" name="your_email" className="form-control" />
     }
 }
 class MyDIVMail extends React.Component {

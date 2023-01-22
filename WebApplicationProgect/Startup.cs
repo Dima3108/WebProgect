@@ -34,7 +34,7 @@ namespace WebApplicationProgect
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName)
-                .AddChakraCore();
+                .AddV8();
             services.AddControllersWithViews();
         }
 
@@ -54,6 +54,7 @@ namespace WebApplicationProgect
            
             app.UseReact(config =>
             {
+               
               //  config.SetLoadBabel(true);
                // config.SetBabelConfig(config_);
             });
@@ -62,8 +63,8 @@ namespace WebApplicationProgect
             app.UseRouting();
 
             app.UseAuthorization();
-            ReactSiteConfiguration.Configuration.AddScript(@"wwwroot\js\tutorial.jsx");
-            
+            //ReactSiteConfiguration.Configuration.AddScript(@"wwwroot\js\tutorial.jsx");
+            Console.WriteLine("is startup!");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

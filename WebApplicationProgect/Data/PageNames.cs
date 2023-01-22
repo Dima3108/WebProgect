@@ -20,8 +20,10 @@ namespace WebApplicationProgect.Data
             //"Тарифы",
             "Наши достижения",
             //"Отзывы",
-            "Контакты",
-            "Чат"
+           // "Контакты",
+           "О разработчиках",
+            "Чат",
+            "О чате"
         };
         public static int GetPagePos(string v)
         {

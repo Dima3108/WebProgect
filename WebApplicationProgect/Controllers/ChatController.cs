@@ -16,7 +16,9 @@ namespace WebApplicationProgect.Controllers
     public enum ErroCodesChat
     {
         Success=0,
-        Empty_value=-1
+        Empty_value=-1,
+        limit_is_exceededName=-2,
+        limit_is_exceededCommit=-3
     }
     public class Message
     {
@@ -120,7 +122,7 @@ namespace WebApplicationProgect.Controllers
             public static INT operator +(INT x, int y) => new INT { Value = x.Value + y };
             public static INT operator -(INT x, int y) => new INT { Value = x.Value - y };
         }
-        private static Message[] messages = new Message[1024];
+        private static Message[] messages = new Message[256];
         private static Message[] GetNotNULL(Message[] m)
         {
             List<Message> M = new List<Message>();
@@ -178,6 +180,10 @@ TotalHesh = UpdateTotalHesh();
             //Console.WriteLine($"user:{user},comment:{message}");
             if (user == null || message == null || user.Length < 0 || message.Length < 0)
                 return ToInt(ErroCodesChat.Empty_value);
+            if (user.Length > 35)
+                return ToInt(ErroCodesChat.limit_is_exceededName);
+            if (message.Length > 4096)
+                return ToInt(ErroCodesChat.limit_is_exceededCommit);
             Message message1 = new Message(user, message,label);
             int i;
             lock (pos)
@@ -369,7 +375,7 @@ f_lock.EnterWriteLock();
                         }
                     }
                     }
-                    return File(m.ToArray(), "application/zip", "files.zip");
+                    return File(m.ToArray(), "application/zip","#"+label+"files.zip");
                 }
               
                 //return File(t,"", "fileinfo.txt");

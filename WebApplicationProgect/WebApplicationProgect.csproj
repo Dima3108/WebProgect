@@ -17,6 +17,7 @@
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.win-x86" Version="3.20.6" />
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.1.0" />
     <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.20.8" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8.Native.win-x64" Version="3.20.8" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.9.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -56,6 +57,18 @@
     <Content Update="wwwroot\js\files.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\js\messageinf.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\react\787.28cb0dcd.chunk.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\react\main.a0d0c453.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\react\main.a0d0c453.js.LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\js\site.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -63,6 +76,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\js\_Layout.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\Чат.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\lib\angular\angular.js">

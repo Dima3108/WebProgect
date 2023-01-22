@@ -38,6 +38,7 @@
           "JavaScriptEngineSwitcher.ChakraCore.Native.win-x86": "3.20.6",
           "JavaScriptEngineSwitcher.Extensions.MsDependencyInjection": "3.1.0",
           "JavaScriptEngineSwitcher.V8": "3.20.8",
+          "JavaScriptEngineSwitcher.V8.Native.win-x64": "3.20.8",
           "Microsoft.TypeScript.MSBuild": "4.9.4",
           "React.AspNet": "5.2.12",
           "React.Core": "5.2.12",
@@ -450,6 +451,11 @@
           "lib/netcoreapp3.1/JavaScriptEngineSwitcher.V8.dll": {}
         }
       },
+      "JavaScriptEngineSwitcher.V8.Native.win-x64/3.20.8": {
+        "dependencies": {
+          "Microsoft.ClearScript.V8.Native.win-x64": "7.3.6"
+        }
+      },
       "JSPool/4.0.0": {
         "dependencies": {
           "JavaScriptEngineSwitcher.Core": "3.19.0"
@@ -503,6 +509,15 @@
         },
         "compile": {
           "lib/netstandard1.0/ClearScript.V8.ICUData.dll": {}
+        }
+      },
+      "Microsoft.ClearScript.V8.Native.win-x64/7.3.6": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/ClearScriptV8.win-x64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "7.3.6.0"
+          }
         }
       },
       "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
@@ -2661,6 +2676,13 @@
       "path": "javascriptengineswitcher.v8/3.20.8",
       "hashPath": "javascriptengineswitcher.v8.3.20.8.nupkg.sha512"
     },
+    "JavaScriptEngineSwitcher.V8.Native.win-x64/3.20.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+FJQZaI1dDHtfYTirdbs3NfPde/BqXe99kyJ62V6JvmEdMJflNv46AgCi37cuRnr83UlLuUmW51TkytmREjOiQ==",
+      "path": "javascriptengineswitcher.v8.native.win-x64/3.20.8",
+      "hashPath": "javascriptengineswitcher.v8.native.win-x64.3.20.8.nupkg.sha512"
+    },
     "JSPool/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2688,6 +2710,13 @@
       "sha512": "sha512-Sc9JLerbW6vVVF6PpOnKKAMvCRX7btJlS0yMkBPkAt8dz5bvjP+oBEWwsIottoXv1L1XXsagJpqtFNRlNywvEA==",
       "path": "microsoft.clearscript.v8.icudata/7.3.6",
       "hashPath": "microsoft.clearscript.v8.icudata.7.3.6.nupkg.sha512"
+    },
+    "Microsoft.ClearScript.V8.Native.win-x64/7.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gC7msJ4Y9EFddksWLberFzWh6dmPUJ7MfrgvACdLO5qsDs2bBeVkeBGLNH98CkBAg2a+5aYoJV8JpaJ/P9Tong==",
+      "path": "microsoft.clearscript.v8.native.win-x64/7.3.6",
+      "hashPath": "microsoft.clearscript.v8.native.win-x64.7.3.6.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
       "type": "package",

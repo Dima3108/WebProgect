@@ -20,7 +20,7 @@ namespace WebApplicationProgect.Controllers
 
         public IActionResult Index()
         {
-            ViewData["position"] = -1;
+            ViewData["position"] =(int) -1;
             return View();
         }
         [HttpGet]
@@ -30,7 +30,7 @@ namespace WebApplicationProgect.Controllers
             {
                 return Index();
             }
-            ViewData["position"] = id;
+            ViewData["position"] =(int) id;
             //return View("Контакты");
             return View(PageNames.PageName[id]);
         }

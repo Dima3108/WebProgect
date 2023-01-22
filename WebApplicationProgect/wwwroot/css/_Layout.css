@@ -1,9 +1,42 @@
 ﻿body {
 }
-.menu_{
-    text-align:left;
+#react_content{
+    display:inline;
+    background-color:aqua;
+    width:300px;
+}
+.menu_ {
+    text-align: left;
 }
 #cancl_but {
    
+    
+}
+#us_n {
+}
+
+#us_c {
+}
+
+#add_f_but {
+}
+
+#file_load_log {
+}
+
+#file_error_log {
+}
+
+#res_b {
+}
+
+.storageCont {
+    background-color:brown;
+    display:compact;
+    
+}
+.storageCont div{
+    background-color:aquamarine;
+    display:compact;
     
 }
