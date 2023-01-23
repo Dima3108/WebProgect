@@ -61,7 +61,7 @@ namespace WebApplicationProgect
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            
             app.UseAuthorization();
             //ReactSiteConfiguration.Configuration.AddScript(@"wwwroot\js\tutorial.jsx");
             Console.WriteLine("is startup!");

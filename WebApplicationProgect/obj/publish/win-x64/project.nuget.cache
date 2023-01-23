@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ddxUJj7jCK+eQgll3Ijv77ZnOAggGxxWk00INJ2YWLTWQH3jSiRF8whLKPLCmuUtz5INZ3wc0a82gVSESEUciw==",
+  "dgSpecHash": "IORgUaNlO5moblkFMBOpA7eYFQrKD7MB2bqyQpIyXADSu+HaDvXG0F3pF9vKATGWTJDnnDsFjwI4yJAD0kQumA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий\\github_repo\\WebProgect\\WebApplicationProgect\\WebApplicationProgect.csproj",
   "expectedPackageFiles": [
@@ -78,7 +78,10 @@
     "C:\\Users\\Дмитрий\\.nuget\\packages\\system.text.encoding.extensions\\4.0.11\\system.text.encoding.extensions.4.0.11.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\Дмитрий\\.nuget\\packages\\system.threading.overlapped\\4.0.1\\system.threading.overlapped.4.0.1.nupkg.sha512",
-    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512"
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.32\\microsoft.netcore.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.32\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\Дмитрий\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.32\\microsoft.aspnetcore.app.runtime.win-x64.3.1.32.nupkg.sha512"
   ],
   "logs": []
 }

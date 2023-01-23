@@ -145,3 +145,4 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\Debug\n
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\Debug\netcoreapp3.1\WebApplicationProgect.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\Debug\netcoreapp3.1\WebApplicationProgect.pdb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\Debug\netcoreapp3.1\WebApplicationProgect.genruntimeconfig.cache
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css

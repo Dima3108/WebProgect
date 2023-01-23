@@ -13,13 +13,18 @@ namespace WebApplicationProgect
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+           var builder= CreateHostBuilder(args);
+           
+                builder.Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+#if !DEBUG
+                    webBuilder.UseUrls(new string[] { "http://192.168.1.71:81" });
+#endif
                     webBuilder.UseStartup<Startup>();
                 });
     }

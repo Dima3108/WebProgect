@@ -245,3 +245,4 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Deb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\img\message.png
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\img\messageexchange.jpg
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\img\tools.png
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Debug\netcoreapp3.1\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
