@@ -481,3 +481,7 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Rel
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Release\netcoreapp3.1\win-x64\WebApplicationProgect.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Release\netcoreapp3.1\win-x64\WebApplicationProgect.pdb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\x64\Release\netcoreapp3.1\win-x64\WebApplicationProgect.genruntimeconfig.cache
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Release\netcoreapp3.1\win-x64\wwwroot\css\bootstrap-grid.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Release\netcoreapp3.1\win-x64\wwwroot\css\bootstrap-reboot.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Release\netcoreapp3.1\win-x64\wwwroot\css\bootstrap-utilities.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\x64\Release\netcoreapp3.1\win-x64\wwwroot\css\bootstrap.css

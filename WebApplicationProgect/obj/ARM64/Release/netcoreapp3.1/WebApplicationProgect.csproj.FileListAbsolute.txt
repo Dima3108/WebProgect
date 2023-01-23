@@ -140,4 +140,8 @@ C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\R
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Release\netcoreapp3.1\WebApplicationProgect.dll
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Release\netcoreapp3.1\WebApplicationProgect.pdb
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Release\netcoreapp3.1\WebApplicationProgect.genruntimeconfig.cache
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Release\netcoreapp3.1\wwwroot\css\bootstrap-grid.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Release\netcoreapp3.1\wwwroot\css\bootstrap-reboot.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Release\netcoreapp3.1\wwwroot\css\bootstrap-utilities.css
+C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\bin\ARM64\Release\netcoreapp3.1\wwwroot\css\bootstrap.css
 C:\Users\Дмитрий\github_repo\WebProgect\WebApplicationProgect\obj\ARM64\Release\netcoreapp3.1\WebApplicationProgect.csproj.AssemblyReference.cache

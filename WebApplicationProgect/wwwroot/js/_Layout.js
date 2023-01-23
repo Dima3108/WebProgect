@@ -158,10 +158,10 @@ xhrlab.send();
                         if (xhr_f.status == 200) {
                             sessionStorage.removeItem(files_n);
                             var v = sessionStorage.getItem('files_inf');
-                            alert(String(formdat.get("f_name")));
+                            //alert(String(formdat.get("f_name")));
 
                             sessionStorage.setItem('files_inf', v.replace(formdat.get("f_name"), ''));
-                            alert(sessionStorage.getItem('files_inf'));
+                            //alert(sessionStorage.getItem('files_inf'));
                             if (i == files_n.length - 1) {
                                 document.getElementById('file_load_log').textContent = "Файлы загружены на сервер";
                             }
